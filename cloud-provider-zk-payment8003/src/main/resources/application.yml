@@ -1,0 +1,11 @@
+# 8003表示注册到Zookeeper服务器的支付服务提供者的端口号
+server:
+  port: 8003
+
+# 服务别名:注册到Zookeeper注册中心的名称
+spring:
+  application:
+    name: zookeeper-payment-service
+  cloud:
+    zookeeper:
+      connect-string: 192.168.1.3:2181

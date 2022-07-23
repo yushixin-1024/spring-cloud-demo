@@ -1,0 +1,37 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      label: main
+      server:
+        git:
+          uri: git@github.com:Urban-ysx/springcloud-config.git
+          search-paths:
+            - springcloud-config
+  # rabbitmq相关配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+#          uri: https://github.com/Urban-ysx/springcloud-config.git
+#          search-paths:
+#            - springcloud-config
+#          username: urban-ysx
+#          password: Ysx199310**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+
+# 暴露Bus刷新配置端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"
